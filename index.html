@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Варианты главной — косметика и ритуалы</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f7f5f0; color: #432f2e; font: 15px/1.6 Arial, sans-serif; }
+    main { width: min(1120px, calc(100% - 48px)); margin: 80px auto; }
+    .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+    h1 { margin: 18px 0; font: 400 clamp(36px, 5vw, 58px)/1.12 Georgia, serif; letter-spacing: -1.5px; }
+    .intro { max-width: 610px; color: #75645e; }
+    .versions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 44px; }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid #d9d3cb; padding-bottom: 22px; }
+    a:focus-visible { outline: 2px solid #432f2e; outline-offset: 6px; }
+    a:hover .open { text-decoration: underline; text-underline-offset: 4px; }
+    .swatch { display: flex; height: 170px; margin-bottom: 24px; overflow: hidden; }
+    .swatch span { flex: 1; }
+    .v1 { border-radius: 2px; }
+    .v2 { border-radius: 90px 90px 4px 4px; }
+    .v3 { border-radius: 24px; }
+    .number { font-size: 11px; letter-spacing: 1px; color: #75645e; }
+    h2 { font: 400 30px/1.2 Georgia, serif; margin: 10px 0 14px; }
+    .description { min-height: 72px; margin: 0; color: #75645e; font-size: 14px; }
+    .open { display: block; margin-top: 24px; font-size: 13px; }
+    .note { margin-top: 32px; font-size: 12px; color: #75645e; }
+    @media (max-width: 767px) {
+      main { margin-block: 40px; }
+      .versions { grid-template-columns: 1fr; gap: 36px; margin-top: 32px; }
+      .swatch { height: 140px; }
+      .description { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Косметика и ритуалы · варианты главной</p>
+    <h1>Какой ритм ближе вам?</h1>
+    <p class="intro">Три направления для сравнения настроения, палитры и композиции. Каждую версию можно посмотреть на компьютере, планшете и телефоне.</p>
+    <div class="versions">
+      <a href="v1/index.html"><div class="swatch v1" aria-hidden="true"><span style="background:#c4dae8"></span><span style="background:#feefb8"></span><span style="background:#432f2e"></span></div><span class="number">ВАРИАНТ 01 · merimarket</span><h2>Blue &amp; Butter</h2><p class="description">Воздушный голубой, сливочный и шоколадный. Спокойная композиция с прямыми линиями.</p><span class="open">Посмотреть вариант →</span></a>
+      <a href="v2/index.html"><div class="swatch v2" aria-hidden="true"><span style="background:#62613f"></span><span style="background:#e9d7df"></span><span style="background:#48372f"></span></div><span class="number">ВАРИАНТ 02 · merimarket</span><h2>Olive &amp; Rose</h2><p class="description">Оливковый, пудровый и тёплый молочный. Мягкие арки и ощущение личного ритуала.</p><span class="open">Посмотреть вариант →</span></a>
+      <a href="v3/index.html"><div class="swatch v3" aria-hidden="true"><span style="background:#893941"></span><span style="background:#ead2d6"></span><span style="background:#d4d994"></span></div><span class="number">ВАРИАНТ 03 · MERIBREND</span><h2>Berry &amp; Lime</h2><p class="description">Ягодный, розовый и мягкий лайм. Более выразительный первый экран и округлые формы.</p><span class="open">Посмотреть вариант →</span></a>
+    </div>
+    <p class="note">Названия — рабочие варианты. Изображения, ассортимент и цены пока условные.</p>
+  </main>
+</body>
+</html>
