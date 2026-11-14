@@ -500,7 +500,7 @@ h2 {
   font-size: 13px;
   line-height: 1.6;
   margin-top: 16px;
-  color: #e0d6cf;
+  color: var(--footer-text);
 }
 
 .footer-group summary {
@@ -523,7 +523,7 @@ h2 {
 
 .footer-links a,
 .footer-links button {
-  color: #e0d6cf;
+  color: var(--footer-text);
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
@@ -540,7 +540,7 @@ h2 {
   gap: 40px;
   margin-top: 70px;
   font-size: 11px;
-  color: #e0d6cf;
+  color: var(--footer-text);
 }
 
 .footer-bottom button {
@@ -562,7 +562,7 @@ h2 {
   background: var(--ink);
   color: var(--paper);
   border: 1px solid #b4a39b;
-  box-shadow: 0 4px 20px #432f2e20;
+  box-shadow: 0 4px 20px rgb(var(--ink-rgb) / 12.5%);
   font-size: 13px;
   z-index: 20;
 }
@@ -902,11 +902,11 @@ h2 {
   }
 
   .footer-group {
-    border-top: 1px solid #705957;
+    border-top: 1px solid var(--footer-line);
   }
 
   .footer-group:last-child {
-    border-bottom: 1px solid #705957;
+    border-bottom: 1px solid var(--footer-line);
   }
 
   .footer-group summary {
@@ -959,7 +959,7 @@ h2 {
     border-top: 1px solid var(--line);
     min-height: 66px;
     padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
-    box-shadow: 0 -4px 20px #432f2e05;
+    box-shadow: 0 -4px 20px rgb(var(--ink-rgb) / 2%);
   }
 
   .bottom-nav>a,
@@ -1060,8 +1060,8 @@ h1 em {
 }
 
 .button:hover {
-  background: #4d4d30;
-  border-color: #4d4d30;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .button-outline {
@@ -1078,7 +1078,7 @@ h1 em {
   padding: 12px 12px 16px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fff;
+  background: var(--card);
 }
 
 .product-image {
@@ -1306,7 +1306,7 @@ summary,
 
 .search:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgb(98 97 63 / 12%);
+  box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 12%);
 }
 
 button:disabled,
@@ -1342,12 +1342,12 @@ select:disabled {
   }
 
   .button:not(:disabled):hover {
-    box-shadow: 0 3px 10px rgb(72 55 47 / 12%);
+    box-shadow: 0 3px 10px rgb(var(--ink-rgb) / 12%);
   }
 
   .product:hover {
     border-color: var(--accent);
-    box-shadow: 0 5px 18px rgb(72 55 47 / 7%);
+    box-shadow: 0 5px 18px rgb(var(--ink-rgb) / 7%);
   }
 
   select:not(:disabled):hover,
@@ -1388,4 +1388,229 @@ summary:active {
 .brand-name-link:hover,
 .brand-name-link:focus-visible {
   text-decoration-color: currentColor;
+}
+
+/* Общие настройки цветов и панель сравнения макетов. */
+:root {
+  --accent-hover: #4d4d30;
+  --accent-rgb: 98 97 63;
+  --ink-rgb: 72 55 47;
+  --footer-text: #e0d6cf;
+  --footer-line: #705957;
+  --card: #fff;
+}
+
+/* По новым референсам: оттенки текста и кнопок адаптированы для контраста. */
+:root[data-palette="olive-sand"] {
+  --paper: #f7f4ee;
+  --ink: #3c382a;
+  --muted: #494235;
+  --accent: #64642d;
+  --accent-hover: #505023;
+  --accent-rgb: 100 100 45;
+  --ink-rgb: 60 56 42;
+  --blue: #c7beb3;
+  --butter: #d3a6a3;
+  --stone: #eae4db;
+  --line: #d5ccc0;
+  --footer-text: #e9dfd2;
+  --footer-line: #776f60;
+  --card: #fffdf8;
+}
+
+:root[data-palette="forest-peach"] {
+  --paper: #fff7ed;
+  --ink: #273a2c;
+  --muted: #35442f;
+  --accent: #3d5b3b;
+  --accent-hover: #2d472b;
+  --accent-rgb: 61 91 59;
+  --ink-rgb: 39 58 44;
+  --blue: #b9ba7a;
+  --butter: #e3a0a6;
+  --stone: #ffe3c8;
+  --line: #d8d5bb;
+  --footer-text: #f5e8d5;
+  --footer-line: #65785d;
+  --card: #fffdf7;
+}
+
+.palette-tools {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  font-family: var(--sans);
+}
+
+.palette-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 3px 14px rgb(var(--ink-rgb) / 12%);
+  font-size: 12px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.palette-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.palette-toggle-colors,
+.palette-swatches {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.palette-toggle-colors i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--paper);
+}
+
+.palette-toggle-colors i + i {
+  margin-left: -4px;
+}
+
+.palette-toggle-colors i:nth-child(1) { background: var(--accent); }
+.palette-toggle-colors i:nth-child(2) { background: var(--butter); }
+.palette-toggle-colors i:nth-child(3) { background: var(--blue); }
+
+.palette-panel {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
+  width: min(330px, calc(100vw - 32px));
+  max-height: calc(100dvh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 8px 36px rgb(var(--ink-rgb) / 18%);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.palette-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.palette-panel-heading h2 {
+  font: 400 18px/1.3 var(--sans);
+  letter-spacing: 0;
+}
+
+.palette-panel-heading .icon-button {
+  font-size: 26px;
+  margin-right: -10px;
+}
+
+.palette-panel-intro,
+.palette-panel-note,
+.palette-status {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.palette-panel-intro {
+  margin-block: 2px 16px;
+}
+
+.palette-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.palette-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  min-height: 68px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.palette-option-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.palette-option-copy strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.palette-option-copy > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.palette-option[aria-pressed=true] {
+  border-color: var(--accent);
+  background: var(--stone);
+}
+
+.palette-swatches {
+  gap: 3px;
+}
+
+.palette-swatches i {
+  display: block;
+  width: 18px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid rgb(var(--ink-rgb) / 10%);
+}
+
+.palette-status {
+  color: var(--ink);
+  margin-top: 14px;
+}
+
+.palette-panel-note {
+  margin-top: 8px;
+}
+
+.palette-reset {
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .palette-toggle:hover,
+  .palette-option:hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (max-width: 767px) {
+  .palette-tools {
+    right: 16px;
+    bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+
+  .palette-panel {
+    max-height: calc(100dvh - 156px - env(safe-area-inset-bottom));
+  }
 }

@@ -163,7 +163,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .sitemap-card:hover {
-    box-shadow: 0 5px 18px rgb(72 55 47 / 7%);
+    box-shadow: 0 5px 18px rgb(var(--ink-rgb) / 7%);
   }
 
   .sitemap-card:hover > .text-link {
