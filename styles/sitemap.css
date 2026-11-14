@@ -1,0 +1,184 @@
+/* Карта сайта: список готовых страниц и план следующих экранов. */
+
+.sitemap-page {
+  padding-top: 20px;
+}
+
+.sitemap-page h1 {
+  font-size: 56px;
+  margin-top: 12px;
+}
+
+.sitemap-page {
+  padding-bottom: 80px;
+}
+
+.sitemap-page>section {
+  margin-top: 48px;
+}
+
+.sitemap-page .section-heading {
+  align-items: center;
+}
+
+.sitemap-page h2 {
+  font-size: 36px;
+}
+
+.map-status {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+}
+
+.sitemap-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 230px;
+  transition:
+    border-color var(--motion-normal) var(--motion-ease),
+    background-color var(--motion-normal) var(--motion-ease),
+    box-shadow var(--motion-normal) var(--motion-ease),
+    transform var(--motion-normal) var(--motion-ease);
+}
+
+.sitemap-card:first-child {
+  background: var(--blue);
+}
+
+.sitemap-card:nth-child(3) {
+  background: var(--butter);
+}
+
+.sitemap-card h3 {
+  font: 32px/1.2 var(--serif);
+  margin-top: 16px;
+}
+
+.sitemap-card>p {
+  font-size: 14px;
+  margin-top: 12px;
+  flex: 1;
+  max-width: 380px;
+}
+
+.sitemap-card>.text-link {
+  margin-top: 24px;
+}
+
+.sitemap-card:hover,
+.current-map {
+  border-color: var(--accent);
+}
+
+.map-planned {
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+}
+
+.map-planned h2 {
+  margin-top: 12px;
+}
+
+.map-planned>p:not(.eyebrow) {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.map-planned ul {
+  padding-left: 20px;
+  columns: 2;
+  column-gap: 40px;
+  margin-top: 22px;
+}
+
+.map-planned li {
+  padding: 7px 0;
+  font-size: 14px;
+  break-inside: avoid;
+}
+
+@media(max-width:767px) {
+  .sitemap-page {
+    padding-top: 6px;
+  }
+
+  .sitemap-page h1 {
+    font-size: 39px;
+  }
+
+  .sitemap-page {
+    padding-bottom: 44px;
+  }
+
+  .sitemap-page>section {
+    margin-top: 32px;
+  }
+
+  .sitemap-page h2 {
+    font-size: 30px;
+  }
+
+  .sitemap-page .section-heading {
+    display: flex;
+    gap: 12px;
+  }
+
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sitemap-card {
+    padding: 24px;
+    min-height: 215px;
+  }
+
+  .sitemap-card h3 {
+    font-size: 30px;
+  }
+
+  .map-planned ul {
+    columns: 1;
+  }
+}
+
+/* Карточка карты сайта — целиком ссылка. */
+.sitemap-card:focus-visible {
+  border-color: var(--accent);
+}
+
+.sitemap-card:active {
+  background-color: var(--stone);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sitemap-card:hover {
+    box-shadow: 0 5px 18px rgb(72 55 47 / 7%);
+  }
+
+  .sitemap-card:hover > .text-link {
+    text-decoration-color: currentColor;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .sitemap-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sitemap-card:active {
+    transform: translateY(1px);
+  }
+}

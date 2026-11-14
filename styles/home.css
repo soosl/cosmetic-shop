@@ -1,0 +1,568 @@
+/* Главная страница: первый экран, категории, подборки и консультация. */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.hero-copy {
+  background: var(--butter);
+  padding: 44px;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-top: 28px;
+  max-width: 470px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 300px;
+}
+
+.hero-visual .image-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(67,47,46,.055);
+  padding: 20px 28px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+  padding-block: 44px 48px;
+}
+
+.benefits p {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.benefits p>span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+}
+
+.category-image {
+  aspect-ratio: 1.525;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.category-title h3 {
+  font-size: 20px;
+}
+
+.category-title .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.category .category-image {
+  transition:
+    filter var(--motion-normal) var(--motion-ease),
+    transform var(--motion-normal) var(--motion-ease);
+}
+
+.category:hover .category-image {
+  filter: brightness(.97);
+}
+
+.collection-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.chip {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.chip.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.chip:hover:not(.is-active) {
+  background: var(--stone);
+}
+
+.consultation-wrap {
+  padding-block: 12px 32px;
+}
+
+.consultation {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background: var(--butter);
+  min-height: 264px;
+  padding: 38px 46px;
+  gap: 36px;
+}
+
+.consultation .eyebrow {
+  margin-bottom: 18px;
+}
+
+.consultation h2 {
+  font-size: 40px;
+}
+
+.consultation-copy>p:not(.eyebrow) {
+  max-width: 510px;
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.consultation .button {
+  margin-top: 18px;
+}
+
+.consultation-image {
+  border: 1px solid rgba(67,47,46,.15);
+  margin: 8px 0 8px 30px;
+}
+
+.brands {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-block: 48px 58px;
+}
+
+.brands>p {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.brand-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 26px;
+  flex: 1;
+  font-size: 23px;
+  letter-spacing: -.8px;
+}
+
+@media(max-width:1150px) {
+  .hero-copy {
+    padding: 34px 30px;
+  }
+
+  .hero-actions .button {
+    padding-inline: 17px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .benefits {
+    gap: 20px;
+  }
+
+  .benefits p {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .brands {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .brand-list {
+    font-size: 21px;
+  }
+
+  .brands .text-link {
+    margin-left: auto;
+  }
+
+  .consultation {
+    padding: 32px;
+    gap: 20px;
+    grid-template-columns: 1.7fr 1fr;
+  }
+
+  .consultation h2 {
+    font-size: 36px;
+  }
+
+  .consultation-image {
+    margin-left: 0;
+  }
+}
+
+@media(max-width:767px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .hero-copy {
+    padding: 30px 24px 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    margin-top: 22px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .hero-visual .image-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-caption {
+    font-size: 11px;
+    padding: 14px 20px;
+  }
+
+  .hero-visual .placeholder-mark {
+    padding-bottom: 32px;
+    font-size: 11px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-block: 28px 30px;
+  }
+
+  .benefits p {
+    font-size: 12px;
+    gap: 14px;
+  }
+
+  .benefits p>span {
+    font-size: 10px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 24px 12px;
+  }
+
+  .category-image {
+    aspect-ratio: 1.2;
+  }
+
+  .category-title {
+    margin-top: 10px;
+    gap: 4px;
+  }
+
+  .category-title h3 {
+    font-size: 16px;
+  }
+
+  .category-title .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .collection-chips {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .chip {
+    min-height: 38px;
+    font-size: 11px;
+    padding: 8px 13px;
+  }
+
+  .consultation-wrap {
+    padding-block: 10px 12px;
+  }
+
+  .consultation {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 0;
+  }
+
+  .consultation .eyebrow {
+    font-size: 8px;
+    letter-spacing: .4px;
+    margin-bottom: 16px;
+  }
+
+  .consultation h2 {
+    font-size: 34px;
+  }
+
+  .consultation-copy>p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  .consultation .button {
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .consultation-image {
+    display: none;
+  }
+
+  .brands {
+    display: block;
+    padding-block: 30px 36px;
+  }
+
+  .brands>p {
+    font-size: 14px;
+  }
+
+  .brands>p br {
+    display: none;
+  }
+
+  .brand-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    margin-block: 26px 20px;
+    font-size: 23px;
+  }
+
+  .brands .text-link {
+    font-size: 12px;
+  }
+}
+
+@media(max-width:359px) {
+  .hero-copy,
+  .consultation {
+    padding-inline: 20px;
+  }
+
+  .consultation h2 {
+    font-size: 30px;
+  }
+
+  .chip {
+    padding-inline: 11px;
+  }
+}
+
+.hero {
+  gap: 40px;
+  padding-block: 12px;
+}
+
+.hero-copy {
+  background: transparent;
+  padding: 40px 0 40px 8px;
+  align-self: center;
+}
+
+.hero-visual {
+  order: -1;
+  border-radius: 210px 210px 6px 6px;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.hero-caption {
+  text-align: center;
+  background: transparent;
+  padding-bottom: 28px;
+}
+
+.category-image {
+  border-radius: 150px 150px 4px 4px;
+  aspect-ratio: 1.2;
+}
+
+.category:nth-child(2) .category-image,
+.category:nth-child(4) .category-image {
+  background: var(--butter);
+}
+
+.chip {
+  border-radius: 4px;
+}
+
+.chip.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.consultation {
+  background: var(--stone);
+  border-radius: 4px;
+  grid-template-columns: 1.8fr 1fr;
+}
+
+.consultation h2 {
+  max-width: 630px;
+}
+
+.consultation-image {
+  background: var(--butter);
+  border: 0;
+  border-radius: 140px 140px 4px 4px;
+}
+
+@media (max-width: 1150px) {
+  .hero {
+    gap: 24px;
+  }
+
+  .hero-copy {
+    padding: 28px 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .button {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    gap: 24px;
+    padding: 14px 0 0;
+  }
+
+  .hero-copy {
+    padding: 0;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-visual {
+    order: 0;
+    min-height: 300px;
+    border-radius: 180px 180px 4px 4px;
+  }
+
+  .hero-caption {
+    padding-bottom: 20px;
+  }
+
+  .category-image {
+    aspect-ratio: 1;
+  }
+
+  .consultation {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation h2 {
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 359px) {
+  .consultation h2 {
+    font-size: 30px;
+  }
+}
+
+/* Отклики элементов главной. */
+@media (hover: hover) and (pointer: fine) {
+  .brand-list a:hover {
+    color: var(--accent);
+  }
+}
+
+.category-title {
+  transition: color var(--motion-fast) var(--motion-ease);
+}
+
+.chip:not(:disabled):active {
+  border-color: var(--accent);
+}
+
+.category:active .category-image {
+  filter: brightness(.94);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .category:hover .category-title {
+    color: var(--accent);
+  }
+
+  .chip:not(:disabled):hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .category:hover .category-image {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chip:not(:disabled):active {
+    transform: scale(.97);
+  }
+}

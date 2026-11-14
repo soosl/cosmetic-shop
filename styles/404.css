@@ -1,0 +1,126 @@
+/* Страница 404: спокойное возвращение к каталогу. */
+
+.not-found {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+  padding-block: 48px 80px;
+  min-height: 570px;
+}
+
+.not-found-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+  background: var(--blue);
+  border-radius: 220px 220px 4px 4px;
+  color: var(--accent);
+}
+
+.not-found-number {
+  font: 170px/1 var(--serif);
+  letter-spacing: -10px;
+  padding-right: 10px;
+}
+
+.not-found-caption {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+.not-found-copy h1 {
+  font-size: 52px;
+  margin-top: 18px;
+  max-width: 540px;
+}
+
+.not-found-description {
+  margin-top: 24px;
+  max-width: 440px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.not-found-actions .button {
+  min-width: 160px;
+}
+
+.not-found-copy > .text-link {
+  margin-top: 20px;
+}
+
+@media (max-width: 1150px) {
+  .not-found {
+    gap: 40px;
+    min-height: 500px;
+  }
+
+  .not-found-copy h1 {
+    font-size: 42px;
+  }
+
+  .not-found-visual {
+    min-height: 330px;
+  }
+
+  .not-found-number {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  .not-found {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 16px 40px;
+    min-height: 0;
+  }
+
+  .not-found-visual {
+    min-height: 180px;
+    border-radius: 160px 160px 4px 4px;
+  }
+
+  .not-found-number {
+    font-size: 100px;
+    letter-spacing: -6px;
+    padding-right: 6px;
+  }
+
+  .not-found-caption {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  .not-found-copy h1 {
+    font-size: 38px;
+    margin-top: 12px;
+  }
+
+  .not-found-description {
+    font-size: 13px;
+    margin-top: 18px;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .not-found-actions .button {
+    width: 100%;
+  }
+}

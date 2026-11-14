@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F4F3EE">
+  <meta name="description" content="Бренды. Косметика и ритуалы merimarket.">
+  <title>Бренды — merimarket</title>
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/brands.css">
+  <script src="demo-data.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="brands.js" defer></script>
+</head>
+<body id="home">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2M9 11a3 3 0 0 0 6 0"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-image" viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="30" rx="2"/><circle cx="30" cy="19" r="3"/><path d="m8 32 10-10 9 9 5-5 9 9"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></symbol>
+  </svg>
+
+  <div class="utility"><div class="container utility-inner"><span>Чуть больше времени для себя.</span><span class="utility-extra">Доставка по Беларуси <span aria-hidden="true">·</span> Поможем с выбором</span></div></div>
+  <header class="container site-header">
+    <a class="icon-button mobile-menu" href="catalog.html" aria-label="Перейти к каталогу"><svg class="icon"><use href="#i-menu"/></svg></a>
+    <a class="brand" href="index.html" aria-label="merimarket — на главную"><span class="wordmark">merimarket</span><span class="brand-caption">КОСМЕТИКА И РИТУАЛЫ</span></a>
+    <form class="search" role="search"><label class="visually-hidden" for="search">Поиск товаров</label><input id="search" name="q" type="search" placeholder="Найти средство, бренд или компонент"><button class="icon-button" type="submit" aria-label="Найти"><svg class="icon"><use href="#i-search"/></svg></button></form>
+    <div class="header-actions">
+      <button class="icon-button desktop-action" type="button" data-demo="Избранное" aria-label="Избранное"><svg class="icon"><use href="#i-heart"/></svg></button>
+      <button class="icon-button desktop-action" type="button" data-demo="Личный кабинет" aria-label="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg></button>
+      <button class="cart-button" type="button" data-demo="Корзина" aria-label="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-label">Корзина · <span data-cart-count>0</span></span><span class="cart-badge" data-cart-count>0</span></button>
+    </div>
+  </header>
+  <nav class="container main-nav" aria-label="Основная навигация">
+    <a class="catalog-link" href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg>Каталог</a><a class="wide-nav" href="catalog.html?category=face">Лицо</a><a class="wide-nav" href="catalog.html?category=body">Тело</a><a class="wide-nav" href="catalog.html?category=hair">Волосы</a><a href="brands.html" aria-current="page">Бренды</a><a href="catalog.html">Новинки</a><a class="wide-nav" href="catalog.html?category=sets">Наборы</a><a class="offers-link" href="catalog.html"><span class="desktop-offers">Специальные предложения</span><span class="mobile-offers">Акции</span></a>
+  </nav>
+
+  <main>
+<div class="container brands-index">
+  <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Бренды</span></nav>
+  <p class="eyebrow">У каждого ухода — свой характер</p><h1>Знакомьтесь с брендами</h1><p class="page-lead">Найдите близкий вам подход к ежедневной заботе. Познакомьтесь с брендом и средствами для ваших ритуалов.</p>
+  <div class="brands-tools"><form class="brand-search" id="brand-search" role="search"><label class="visually-hidden" for="brand-query">Поиск бренда</label><input type="search" id="brand-query" placeholder="Найти бренд по названию"><button class="icon-button" type="submit" aria-label="Найти бренд"><svg class="icon"><use href="#i-search"/></svg></button></form>
+  <div class="brand-alphabet" aria-label="Фильтр по первой букве"><button type="button" data-letter-filter="" aria-pressed="true">Все</button><button type="button" data-letter-filter="B" aria-pressed="false">B</button><button type="button" data-letter-filter="C" aria-pressed="false">C</button><button type="button" data-letter-filter="F" aria-pressed="false">F</button><button type="button" data-letter-filter="G" aria-pressed="false">G</button><button type="button" data-letter-filter="J" aria-pressed="false">J</button></div></div>
+  <p class="brands-count" role="status" aria-live="polite" data-brands-count>Найдено брендов: 5</p>
+  <div class="brands-grid"><a class="brand-card" href="brand.html?brand=biretix" data-brand-card data-name="BIRETIX" data-letter="B">
+  <div class="brand-card-logo"><span>BIRETIX</span></div><div class="brand-card-bottom"><h2>BIRETIX</h2><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+  <p>Подборка скоро появится</p>
+</a>
+<a class="brand-card" href="brand.html?brand=cosmedix" data-brand-card data-name="COSMEDIX" data-letter="C">
+  <div class="brand-card-logo"><span>COSMEDIX</span></div><div class="brand-card-bottom"><h2>COSMEDIX</h2><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+  <p>Подборка скоро появится</p>
+</a>
+<a class="brand-card" href="brand.html?brand=forme" data-brand-card data-name="FORME" data-letter="F">
+  <div class="brand-card-logo"><span>FORME</span></div><div class="brand-card-bottom"><h2>FORME</h2><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+  <p>8 средств в подборке</p>
+</a>
+<a class="brand-card" href="brand.html?brand=genosys" data-brand-card data-name="GENOSYS" data-letter="G">
+  <div class="brand-card-logo"><span>GENOSYS</span></div><div class="brand-card-bottom"><h2>GENOSYS</h2><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+  <p>Подборка скоро появится</p>
+</a>
+<a class="brand-card" href="brand.html?brand=jw-pro" data-brand-card data-name="JW PRO" data-letter="J">
+  <div class="brand-card-logo"><span>JW PRO</span></div><div class="brand-card-bottom"><h2>JW PRO</h2><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+  <p>Подборка скоро появится</p>
+</a></div>
+  <div class="brands-empty" data-brands-empty hidden><h2>Такой бренд пока не найден</h2><p>Попробуйте другое название или посмотрите весь список.</p><button class="button button-outline" type="button" data-reset-brands>Показать все бренды</button></div>
+  <div class="brands-bottom"><div><p class="eyebrow">Выбирайте в своём ритме</p><h2>Начать можно с потребностей кожи</h2></div><a class="button button-outline" href="catalog.html">Перейти в каталог</a></div>
+</div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="wordmark" href="index.html">merimarket</a><p>Косметика для личных ритуалов.<br>В вашем темпе.</p></div><details class="footer-group" open><summary>Выбрать уход</summary><div class="footer-links"><a href="catalog.html">Каталог</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a href="catalog.html?category=sets">Наборы</a></div></details><details class="footer-group" open><summary>Информация</summary><div class="footer-links"><button type="button" data-demo="О магазине">О магазине</button><button type="button" data-demo="Доставка и оплата">Доставка и оплата</button><button type="button" data-demo="Лояльность">Лояльность</button><button type="button" data-demo="Возврат и обмен">Возврат и обмен</button></div></details><details class="footer-group" open><summary>Мы рядом</summary><div class="footer-links"><button type="button" data-demo="Telegram">Написать в Telegram</button><button type="button" data-demo="Instagram">Instagram</button><button type="button" data-demo="Контакты">Контакты</button></div></details></div><div class="footer-bottom"><a href="sitemap.html">Карта сайта</a><span>© merimarket, 2026</span><button type="button" data-demo="Политика конфиденциальности">Политика конфиденциальности</button><button type="button" data-demo="Публичная оферта">Публичная оферта</button></div></div></footer>
+  <nav class="bottom-nav" aria-label="Мобильная навигация"><a href="index.html"><svg class="icon"><use href="#i-home"/></svg><span>Главная</span></a><a href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg><span>Каталог</span></a><button type="button" data-demo="Избранное"><svg class="icon"><use href="#i-heart"/></svg><span>Избранное</span></button><button type="button" data-demo="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span>Корзина <span data-cart-count>0</span></span></button><button type="button" data-demo="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg><span>Профиль</span></button></nav>
+  <div class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

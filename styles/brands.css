@@ -1,0 +1,255 @@
+/* Общая страница брендов. */
+.brands-index {
+  padding-block: 20px 70px;
+}
+
+.brands-index h1 {
+  font-size: 56px;
+  margin-top: 12px;
+}
+
+.brands-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+
+.brand-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  width: min(100%, 400px);
+  min-height: 48px;
+  transition: border-color var(--motion-normal) var(--motion-ease), box-shadow var(--motion-normal) var(--motion-ease);
+}
+
+.brand-search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(98 97 63 / 12%);
+}
+
+.brand-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.brand-search input:focus-visible {
+  outline: none;
+}
+
+.brand-alphabet {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.brand-alphabet button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 13px;
+  padding-inline: 12px;
+}
+
+.brand-alphabet button[aria-pressed=true] {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+
+.brands-count {
+  margin-block: 26px 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 24px;
+}
+
+.brand-card {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+
+.brand-card-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  background: var(--stone);
+  border-radius: 100px 100px 4px 4px;
+  font-size: 30px;
+  letter-spacing: -1px;
+  transition: background-color var(--motion-normal) var(--motion-ease), transform var(--motion-normal) var(--motion-ease);
+}
+
+.brand-card:nth-child(3n+1) .brand-card-logo {
+  background: var(--blue);
+}
+
+.brand-card:nth-child(3n+2) .brand-card-logo {
+  background: var(--butter);
+}
+
+.brand-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  transition: color var(--motion-fast) var(--motion-ease);
+}
+
+.brand-card h2 {
+  font-family: var(--sans);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.brand-card > p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.brands-empty {
+  background: var(--stone);
+  border-radius: 4px;
+  text-align: center;
+  padding: 44px 24px;
+}
+
+.brands-empty h2 {
+  font-size: 34px;
+}
+
+.brands-empty p {
+  font-size: 14px;
+  margin-block: 18px 24px;
+}
+
+.brands-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.brands-bottom h2 {
+  font-size: 34px;
+  margin-top: 12px;
+  max-width: 500px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-card:hover {
+    border-color: var(--accent);
+  }
+
+  .brand-card:hover .brand-card-bottom {
+    color: var(--accent);
+  }
+
+  .brand-alphabet button:hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .brand-card:hover .brand-card-logo {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .brands-index {
+    padding-block: 6px 40px;
+  }
+
+  .brands-index h1 {
+    font-size: 38px;
+  }
+
+  .brands-tools {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .brand-search {
+    width: 100%;
+  }
+
+  .brand-alphabet {
+    gap: 6px;
+  }
+
+  .brand-alphabet button {
+    min-width: 40px;
+    padding-inline: 10px;
+  }
+
+  .brands-grid {
+    gap: 24px 12px;
+  }
+
+  .brand-card-logo {
+    min-height: 135px;
+    font-size: 21px;
+    letter-spacing: -.8px;
+    border-radius: 80px 80px 4px 4px;
+  }
+
+  .brand-card h2 {
+    font-size: 13px;
+  }
+
+  .brand-card-bottom {
+    margin-top: 12px;
+    gap: 4px;
+  }
+
+  .brand-card-bottom .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand-card > p {
+    font-size: 10px;
+  }
+
+  .brands-bottom {
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+
+  .brands-bottom h2,
+  .brands-empty h2 {
+    font-size: 30px;
+  }
+
+  .brands-bottom .button {
+    width: 100%;
+  }
+}

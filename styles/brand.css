@@ -1,0 +1,266 @@
+/* Страница отдельного бренда. */
+.brand-page {
+  padding-block: 20px 70px;
+}
+
+.brand-hero {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: 64px;
+  padding-block: 8px 50px;
+}
+
+.brand-hero-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 340px;
+  background: var(--blue);
+  border-radius: 200px 200px 4px 4px;
+}
+
+.brand-hero-logo > [data-brand-name] {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 66px);
+  letter-spacing: -2px;
+}
+
+.brand-logo-caption {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.brand-hero-copy h1 {
+  font-size: 58px;
+  margin-top: 18px;
+}
+
+.brand-intro {
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+
+.brand-hero-note {
+  color: var(--muted);
+  max-width: 460px;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+.brand-hero-copy > .text-link {
+  margin-top: 20px;
+}
+
+.brand-products {
+  padding-top: 30px;
+}
+
+.brand-products h2 {
+  font-size: 40px;
+}
+
+.brand-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.brand-category-filters button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 10px 18px;
+}
+
+.brand-category-filters button[aria-pressed=true] {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+
+.brand-sort {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.brand-sort select {
+  padding: 10px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+}
+
+.brand-count {
+  margin-block: 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.brand-product-grid .product-buy {
+  flex-wrap: wrap;
+}
+
+.brand-empty {
+  text-align: center;
+  background: var(--stone);
+  border-radius: 4px;
+  padding: 44px 24px;
+}
+
+.brand-empty h2 {
+  font-size: 34px;
+  margin-top: 14px;
+}
+
+.brand-empty > p:not(.eyebrow) {
+  font-size: 14px;
+  color: var(--muted);
+  margin-block: 20px 24px;
+}
+
+.brand-consultation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--butter);
+  margin-top: 60px;
+  padding: 36px;
+  border-radius: 4px;
+}
+
+.brand-consultation h2 {
+  font-size: 38px;
+  margin-top: 12px;
+}
+
+.brand-consultation p:not(.eyebrow) {
+  max-width: 540px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-category-filters button:hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-category-filters button:active {
+    transform: scale(.98);
+  }
+}
+
+@media (max-width: 1150px) {
+  .brand-hero {
+    gap: 36px;
+  }
+
+  .brand-hero-logo {
+    min-height: 310px;
+  }
+
+  .brand-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .brand-intro {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-page {
+    padding-block: 6px 40px;
+  }
+
+  .brand-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 26px;
+  }
+
+  .brand-hero-logo {
+    min-height: 230px;
+    border-radius: 160px 160px 4px 4px;
+  }
+
+  .brand-hero-logo > [data-brand-name] {
+    font-size: 48px;
+  }
+
+  .brand-hero-copy h1 {
+    font-size: 42px;
+    margin-top: 12px;
+  }
+
+  .brand-intro {
+    font-size: 14px;
+    margin-top: 18px;
+  }
+
+  .brand-products h2 {
+    font-size: 32px;
+  }
+
+  .brand-toolbar {
+    align-items: flex-start;
+  }
+
+  .brand-category-filters {
+    gap: 8px;
+  }
+
+  .brand-category-filters button {
+    padding-inline: 14px;
+    font-size: 11px;
+  }
+
+  .brand-sort {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .brand-product-grid .product-buy {
+    flex-wrap: nowrap;
+  }
+
+  .brand-consultation {
+    margin-top: 36px;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .brand-consultation h2 {
+    font-size: 32px;
+  }
+
+  .brand-consultation .button {
+    width: 100%;
+  }
+}
