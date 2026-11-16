@@ -1,7 +1,6 @@
 // Небольшие отклики для показа макета. Данные магазина и оформление заказа не подключены.
 const toast = document.querySelector('.toast');
 let toastTimer;
-let cartCount = 0;
 function notify(message) {
   clearTimeout(toastTimer);
   toast.textContent = message;
@@ -12,25 +11,9 @@ function notify(message) {
 document.querySelectorAll('[data-demo]').forEach(button => {
   button.addEventListener('click', () => notify(`${button.dataset.demo} — раздел будет доступен в полной версии.`));
 });
-document.querySelectorAll('.add-to-cart').forEach(button => {
-  button.addEventListener('click', () => {
-    const quantity = button.closest('.detail-buy')?.querySelector('input');
-    if (quantity && !quantity.reportValidity()) return;
-    cartCount += quantity ? Number(quantity.value) : 1;
-    document.querySelectorAll('[data-cart-count]').forEach(counter => { counter.textContent = cartCount; });
-    notify('Товар добавлен в демонстрационную корзину');
-  });
-});
-document.querySelectorAll('.favorite').forEach(button => {
-  button.addEventListener('click', () => {
-    const selected = button.getAttribute('aria-pressed') !== 'true';
-    button.setAttribute('aria-pressed', String(selected));
-    notify(selected ? 'Добавлено в избранное' : 'Удалено из избранного');
-  });
-});
 document.querySelectorAll('.chip').forEach(button => {
   button.addEventListener('click', () => {
-    const needs = { 'Увлажнение': 'hydration', 'Защита SPF': 'spf' };
+    const needs = { 'Увлажнение': 'hydration', 'Защита SPF': 'spf', 'Сияние кожи': 'radiance' };
     const need = needs[button.textContent.trim()];
     if (button.textContent.trim() === 'Чувствительная кожа') {
       notify('Эта подборка появится после наполнения каталога.');
@@ -54,7 +37,7 @@ mobileLayout.addEventListener('change', updateFooter);
 
 const params = new URLSearchParams(window.location.search);
 const categoryNames = { face: 'Уход для лица', body: 'Уход для тела', hair: 'Уход для волос', sets: 'Наборы ухода' };
-const needNames = { cleansing: 'Очищение', hydration: 'Увлажнение', spf: 'Защита SPF' };
+const needNames = { cleansing: 'Очищение', hydration: 'Увлажнение', spf: 'Защита SPF', radiance: 'Сияние кожи' };
 const normalize = value => value.toLocaleLowerCase('ru').replaceAll('ё', 'е');
 const filterForm = document.querySelector('#catalog-filters');
 if (filterForm) {
@@ -124,7 +107,7 @@ if (filterForm) {
 
 if (document.querySelector('[data-product-title]')) {
   const product = window.demoProducts.find(item => item.id === params.get('item')) || window.demoProducts[0];
-  const textFields = { title: product.title, breadcrumb: product.title, note: product.note, description: product.description, usage: product.usage, volume: product.volume, price: `${product.price},00`, need: needNames[product.need] };
+  const textFields = { title: product.title, breadcrumb: product.title, note: product.note, description: product.description, usage: product.usage, volume: product.volume, ingredients: product.ingredients, caution: product.caution, need: needNames[product.need] };
   Object.entries(textFields).forEach(([field, value]) => {
     document.querySelectorAll(`[data-product-${field}]`).forEach(node => { node.textContent = value; });
   });
@@ -132,6 +115,12 @@ if (document.querySelector('[data-product-title]')) {
   const stage = document.querySelector('[data-product-stage]');
   stage.classList.remove('blue', 'butter', 'stone');
   stage.classList.add(product.color);
+  const photo = document.querySelector('[data-product-photo]');
+  photo.src = product.image;
+  photo.alt = `${product.title}, ${product.volume}`;
+  document.querySelector('[data-detail-add]').dataset.addId = product.id;
+  document.querySelector('.detail-favorite').dataset.favoriteId = product.id;
+  document.querySelector('meta[name="description"]').content = `${product.title}. ${product.note}.`;
   document.querySelector('.related-products')?.querySelectorAll('[data-product-card]').forEach(card => { card.hidden = card.dataset.id === product.id; });
 }
 

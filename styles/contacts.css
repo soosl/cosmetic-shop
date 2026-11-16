@@ -1,0 +1,17 @@
+/* Контакты: согласованные значения заполним перед запуском. */
+.contacts-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; margin-top: 36px; }
+.contact-channels { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.contact-channel { border: 1px solid var(--line); border-radius: 5px; padding: 26px; }
+.contact-channel h2 { font-size: 26px; margin-bottom: 14px; }
+.contact-channel p { font-size: 13px; color: var(--muted); }
+.contact-channel span { display: block; font-size: 12px; margin-top: 16px; }
+.contact-consultation { background: var(--stone); border-radius: 100px 100px 5px 5px; padding: 44px 32px 32px; }
+.contact-consultation h2 { font-size: 32px; margin-bottom: 20px; }
+.contact-consultation p { font-size: 14px; margin-bottom: 20px; }
+.seller-details { border-top: 1px solid var(--line); padding-top: 32px; margin-top: 44px; }
+.seller-details h2 { font-size: 32px; }
+.seller-details dl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.seller-details dt { font-size: 12px; color: var(--muted); }
+.seller-details dd { margin: 8px 0 0; font-size: 14px; }
+@media(max-width:900px) { .contacts-layout { grid-template-columns: 1fr; } }
+@media(max-width:599px) { .contact-channels,.seller-details dl { grid-template-columns: 1fr; } .contact-channel { padding: 22px; } }

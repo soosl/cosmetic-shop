@@ -1,0 +1,2 @@
+/* Оферта: собственный файл страницы, типографика документа — общая. */
+.offer-page .document-content section:first-child { padding: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 5px; }

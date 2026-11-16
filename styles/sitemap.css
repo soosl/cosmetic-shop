@@ -38,6 +38,7 @@
 
 .sitemap-card {
   display: flex;
+  min-width: 0;
   flex-direction: column;
   padding: 30px;
   border: 1px solid var(--line);
@@ -61,6 +62,7 @@
 .sitemap-card h3 {
   font: 32px/1.2 var(--serif);
   margin-top: 16px;
+  overflow-wrap: anywhere;
 }
 
 .sitemap-card>p {
@@ -134,7 +136,7 @@
   }
 
   .sitemap-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0,1fr);
     gap: 14px;
   }
 

@@ -1,18 +1,23 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-palette="forest-peach">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F4F3EE">
-  <meta name="description" content="Косметика для маленьких ежедневных ритуалов. Olive & Rose — концепция главной страницы merimarket.">
+  <meta name="theme-color" content="#FFF7ED">
+  <meta name="description" content="Косметика для маленьких ежедневных ритуалов. ENDOCARE и HELIOCARE: очищение, увлажнение и защита SPF.">
   <title>merimarket — косметика и ритуалы</title>
-  <script src="palette.js"></script>
-  <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/home.css">
-  <script src="demo-data.js" defer></script>
-  <script src="script.js" defer></script>
+  <!-- Переключатель палитр сохранён: раскомментировать для сравнения вариантов.
+  <script src="palette.js?v=20261116-v1"></script>
+  -->
+  <script src="page-loader.js?v=20261116-v1"></script>
+  <link rel="stylesheet" href="styles/common.css?v=20261116-v1">
+  <link rel="stylesheet" href="styles/home.css?v=20261116-v1">
+  <script src="demo-data.js?v=20261116-v1" defer></script>
+  <script src="script.js?v=20261116-v1" defer></script>
+  <script src="commerce.js?v=20261116-v1" defer></script>
 </head>
 <body id="home">
+  <div class="page-loader" role="status" aria-label="Загрузка страницы"><span class="loader-orbit" aria-hidden="true"></span><span class="loader-wordmark" aria-hidden="true">merimarket</span><span class="visually-hidden">Загружаем ваш ритуал ухода</span></div>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
@@ -30,74 +35,90 @@
     <a class="brand" href="index.html" aria-label="merimarket — на главную"><span class="wordmark">merimarket</span><span class="brand-caption">КОСМЕТИКА И РИТУАЛЫ</span></a>
     <form class="search" role="search"><label class="visually-hidden" for="search">Поиск товаров</label><input id="search" name="q" type="search" placeholder="Найти средство, бренд или компонент"><button class="icon-button" type="submit" aria-label="Найти"><svg class="icon"><use href="#i-search"/></svg></button></form>
     <div class="header-actions">
-      <button class="icon-button desktop-action" type="button" data-demo="Избранное" aria-label="Избранное"><svg class="icon"><use href="#i-heart"/></svg></button>
-      <button class="icon-button desktop-action" type="button" data-demo="Личный кабинет" aria-label="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg></button>
-      <button class="cart-button" type="button" data-demo="Корзина" aria-label="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-label">Корзина · <span data-cart-count>0</span></span><span class="cart-badge" data-cart-count>0</span></button>
+      <a class="icon-button desktop-action" href="favorites.html" aria-label="Избранное"><svg class="icon"><use href="#i-heart"/></svg></a>
+
+      <a class="cart-button" href="cart.html" aria-label="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-label">Корзина · <span data-cart-count>0</span></span><span class="cart-badge" data-cart-count>0</span></a>
     </div>
   </header>
   <nav class="container main-nav" aria-label="Основная навигация">
-    <a class="catalog-link" href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg>Каталог</a><a class="wide-nav" href="catalog.html?category=face">Лицо</a><a class="wide-nav" href="catalog.html?category=body">Тело</a><a class="wide-nav" href="catalog.html?category=hair">Волосы</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a class="wide-nav" href="catalog.html?category=sets">Наборы</a><a class="offers-link" href="catalog.html"><span class="desktop-offers">Специальные предложения</span><span class="mobile-offers">Акции</span></a>
+    <a class="catalog-link" href="catalog.html">Каталог</a><a class="wide-nav" href="catalog.html?category=face">Лицо</a><a class="wide-nav" href="catalog.html?category=body">Тело</a><a class="wide-nav" href="catalog.html?category=hair">Волосы</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a class="wide-nav" href="catalog.html?category=sets">Наборы</a><a class="offers-link" href="faq.html">Помощь</a>
   </nav>
 
   <main>
     <section class="container hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow">Осознанный уход · личное время</p><h1 id="hero-title">Забота,<br><em>близкая вам.</em></h1><p class="hero-description">Уход, который легко сделать частью своего дня.<br class="desktop-break"> Находите средства по потребностям кожи.</p><div class="hero-actions"><a class="button" href="catalog.html">Подобрать уход</a><a class="button button-outline" href="catalog.html">Весь каталог</a></div></div>
-      <div class="hero-visual placeholder blue"><div class="placeholder-mark"><svg class="image-icon"><use href="#i-image"/></svg><span>Уход, близкий вашей коже</span></div><p class="hero-caption">Ваше время. Ваш маленький ритуал.</p></div>
+      <div class="hero-copy"><p class="eyebrow">Осознанный уход · личное время</p><h1 id="hero-title">Забота,<br><em>близкая вам.</em></h1><p class="hero-description">От мягкого очищения до защиты от солнца.<br class="desktop-break"> Откройте уход ENDOCARE и HELIOCARE.</p><div class="hero-actions"><a class="button" href="#">Подобрать уход</a><a class="button button-outline" href="catalog.html">Весь каталог</a></div></div>
+      <a class="hero-visual hero-editorial" href="product.html?item=serum" aria-label="Познакомиться с ENDOCARE Radiance Vitamin C20 Serum"><img src="https://lecoleprof.by/wp-content/uploads/2026/07/2-2-700x875.png" alt="ENDOCARE Radiance Vitamin C20 Serum — уход с витамином C" width="700" height="875" fetchpriority="high"><p class="hero-caption">ENDOCARE · немного сияния каждый день <span aria-hidden="true">↗</span></p></a>
     </section>
     <div class="container benefits" aria-label="Преимущества"><p><span>01</span>Подбор по потребностям кожи</p><p><span>02</span>Понятные составы и применение</p><p><span>03</span>Консультант рядом, если нужен</p></div>
 
     <section class="container categories section" id="categories" aria-labelledby="categories-title">
       <div class="section-heading"><div><p class="eyebrow">С чего начнём?</p><h2 id="categories-title">Найдите свой ритуал</h2></div><a class="text-link" href="catalog.html">Все категории <span aria-hidden="true">→</span></a></div>
       <div class="category-grid">
-        <a class="category" href="catalog.html?category=face"><div class="category-image placeholder blue"><svg class="image-icon"><use href="#i-image"/></svg></div><div class="category-title"><h3>Для лица</h3><svg class="icon"><use href="#i-arrow"/></svg></div></a>
-        <a class="category" href="catalog.html?category=body"><div class="category-image placeholder stone"><svg class="image-icon"><use href="#i-image"/></svg></div><div class="category-title"><h3>Для тела</h3><svg class="icon"><use href="#i-arrow"/></svg></div></a>
-        <a class="category" href="catalog.html?category=hair"><div class="category-image placeholder butter"><svg class="image-icon"><use href="#i-image"/></svg></div><div class="category-title"><h3>Для волос</h3><svg class="icon"><use href="#i-arrow"/></svg></div></a>
-        <a class="category" href="catalog.html?category=sets"><div class="category-image placeholder stone"><svg class="image-icon"><use href="#i-image"/></svg></div><div class="category-title"><h3>Наборы</h3><svg class="icon"><use href="#i-arrow"/></svg></div></a>
+        <a class="category category-cleansing" href="catalog.html?need=cleansing">
+          <svg class="category-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 19c5-7 11 7 16 0s11 7 16 0M8 29c5-7 11 7 16 0s11 7 16 0"/></svg>
+          <div class="category-copy"><h3>Очищение</h3><p>Начните с ощущения <br>чистоты и свежести.</p></div>
+          <span class="category-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="category category-radiance" href="catalog.html?need=radiance">
+          <svg class="category-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M23 7c0 11-5 16-16 16 11 0 16 5 16 16 0-11 5-16 16-16-11 0-16-5-16-16ZM38 6v9M33.5 10.5h9"/></svg>
+          <div class="category-copy"><h3>Сияние кожи</h3><p>Найдите уход для <br>ровного тона и сияния.</p></div>
+          <span class="category-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="category category-hydration" href="catalog.html?need=hydration">
+          <svg class="category-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6S11 21 11 29a13 13 0 0 0 26 0C37 21 24 6 24 6Z"/><path d="M17 29a7 7 0 0 0 7 7"/></svg>
+          <div class="category-copy"><h3>Увлажнение</h3><p>Добавьте комфорта <br>в ежедневный ритуал.</p></div>
+          <span class="category-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="category category-spf" href="catalog.html?need=spf">
+          <svg class="category-symbol" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="9"/><path d="M24 4v5M24 39v5M4 24h5M39 24h5M10 10l4 4M34 34l4 4M10 38l4-4M34 14l4-4"/></svg>
+          <div class="category-copy"><h3>Защита SPF</h3><p>Завершите утренний <br>уход защитой от солнца.</p></div>
+          <span class="category-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
       </div>
     </section>
 
     <section class="container products section" id="products" aria-labelledby="products-title">
-      <div class="section-heading"><div><p class="eyebrow">Выбирают для себя</p><h2 id="products-title">Выбор для ежедневного ухода</h2></div><a class="text-link" href="catalog.html">Весь каталог <span aria-hidden="true">→</span></a></div>
-      <div class="collection-chips" aria-label="Подборки"><button class="chip is-active" type="button" aria-pressed="true">Популярное</button><button class="chip" type="button" aria-pressed="false">Увлажнение</button><button class="chip" type="button" aria-pressed="false">Чувствительная кожа</button><button class="chip" type="button" aria-pressed="false">Защита SPF</button></div>
+      <div class="section-heading"><div><p class="eyebrow">Знакомство с коллекцией</p><h2 id="products-title">Выбор для ежедневного ухода</h2></div><a class="text-link" href="catalog.html">Весь каталог <span aria-hidden="true">→</span></a></div>
+      <div class="collection-chips" aria-label="Подборки"><button class="chip is-active" type="button" aria-pressed="true">Вся подборка</button><button class="chip" type="button" aria-pressed="false">Увлажнение</button><button class="chip" type="button" aria-pressed="false">Сияние кожи</button><button class="chip" type="button" aria-pressed="false">Защита SPF</button></div>
       <div class="product-grid">
-        <article class="product" data-product-card data-id="gel" data-category="face" data-need="cleansing" data-price="81">
-  <div class="product-image placeholder blue">
-    <a class="product-photo-link" href="product.html?item=gel" aria-label="Открыть товар: Мягкий очищающий гель"><span class="placeholder-mark"><svg class="image-icon"><use href="#i-image"/></svg><span>Фото товара</span></span></a>
-    <button class="favorite icon-button" type="button" aria-label="В избранное: Мягкий очищающий гель" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <article class="product" data-product-card data-id="gel" data-brand="cantabria" data-category="face" data-need="cleansing">
+  <div class="product-image placeholder">
+    <a class="product-photo-link" href="product.html?item=gel" aria-label="Открыть товар: ENDOCARE Aquafoam"><img class="product-photo" src="https://lecoleprof.by/wp-content/uploads/2025/10/1-95-scaled-e1774945916385.png" alt="ENDOCARE Aquafoam, 125 мл" width="700" height="700" loading="lazy" decoding="async"></a>
+    <button class="favorite icon-button" type="button" aria-label="В избранное: ENDOCARE Aquafoam" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
   </div>
-  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=forme">FORME</a></p><h3><a href="product.html?item=gel">Мягкий очищающий гель</a></h3><p class="product-description">Для ежедневного умывания · 200 мл</p><div class="product-buy"><p class="price">81,00 <span>BYN</span></p><button class="button add-to-cart" type="button">В корзину</button></div></div>
+  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=cantabria">Cantabria Labs</a></p><h3><a href="product.html?item=gel">ENDOCARE Aquafoam</a></h3><p class="product-description">Мягкая пенка для очищения · 125 мл</p><div class="product-buy"><p class="price price-pending">Цена уточняется</p><button class="button" type="button" data-add-id="gel">В корзину</button></div></div>
 </article>
-        <article class="product" data-product-card data-id="serum" data-category="face" data-need="hydration" data-price="107">
-  <div class="product-image placeholder butter">
-    <a class="product-photo-link" href="product.html?item=serum" aria-label="Открыть товар: Увлажняющая сыворотка"><span class="placeholder-mark"><svg class="image-icon"><use href="#i-image"/></svg><span>Фото товара</span></span></a>
-    <button class="favorite icon-button" type="button" aria-label="В избранное: Увлажняющая сыворотка" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <article class="product" data-product-card data-id="serum" data-brand="cantabria" data-category="face" data-need="radiance">
+  <div class="product-image placeholder">
+    <a class="product-photo-link" href="product.html?item=serum" aria-label="Открыть товар: ENDOCARE Radiance Vitamin C20 Serum"><img class="product-photo" src="https://lecoleprof.by/wp-content/uploads/2026/07/1-2-scaled-e1786088362482-700x700.png" alt="ENDOCARE Radiance Vitamin C20 Serum, 30 мл" width="700" height="700" loading="lazy" decoding="async"></a>
+    <button class="favorite icon-button" type="button" aria-label="В избранное: ENDOCARE Radiance Vitamin C20 Serum" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
   </div>
-  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=forme">FORME</a></p><h3><a href="product.html?item=serum">Увлажняющая сыворотка</a></h3><p class="product-description">Лёгкая текстура · 30 мл</p><div class="product-buy"><p class="price">107,00 <span>BYN</span></p><button class="button add-to-cart" type="button">В корзину</button></div></div>
+  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=cantabria">Cantabria Labs</a></p><h3><a href="product.html?item=serum">ENDOCARE Radiance Vitamin C20 Serum</a></h3><p class="product-description">Антиоксидантная сыворотка с витамином C · 30 мл</p><div class="product-buy"><p class="price price-pending">Цена уточняется</p><button class="button" type="button" data-add-id="serum">В корзину</button></div></div>
 </article>
-        <article class="product" data-product-card data-id="cream" data-category="face" data-need="hydration" data-price="126">
-  <div class="product-image placeholder stone">
-    <a class="product-photo-link" href="product.html?item=cream" aria-label="Открыть товар: Восстанавливающий крем"><span class="placeholder-mark"><svg class="image-icon"><use href="#i-image"/></svg><span>Фото товара</span></span></a>
-    <button class="favorite icon-button" type="button" aria-label="В избранное: Восстанавливающий крем" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <article class="product" data-product-card data-id="cream" data-brand="cantabria" data-category="face" data-need="hydration">
+  <div class="product-image placeholder">
+    <a class="product-photo-link" href="product.html?item=cream" aria-label="Открыть товар: ENDOCARE Age Barrier Hyaluboost"><img class="product-photo" src="https://lecoleprof.by/wp-content/uploads/2026/07/gel-krem-scaled-e1794394434452-700x700.png" alt="ENDOCARE Age Barrier Hyaluboost, 50 мл" width="700" height="700" loading="lazy" decoding="async"></a>
+    <button class="favorite icon-button" type="button" aria-label="В избранное: ENDOCARE Age Barrier Hyaluboost" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
   </div>
-  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=forme">FORME</a></p><h3><a href="product.html?item=cream">Восстанавливающий крем</a></h3><p class="product-description">Комфорт и увлажнение · 50 мл</p><div class="product-buy"><p class="price">126,00 <span>BYN</span></p><button class="button add-to-cart" type="button">В корзину</button></div></div>
+  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=cantabria">Cantabria Labs</a></p><h3><a href="product.html?item=cream">ENDOCARE Age Barrier Hyaluboost</a></h3><p class="product-description">Увлажняющий гель-крем · 50 мл</p><div class="product-buy"><p class="price price-pending">Цена уточняется</p><button class="button" type="button" data-add-id="cream">В корзину</button></div></div>
 </article>
-        <article class="product" data-product-card data-id="spf" data-category="face" data-need="spf" data-price="115">
-  <div class="product-image placeholder blue">
-    <a class="product-photo-link" href="product.html?item=spf" aria-label="Открыть товар: Солнцезащитный флюид SPF 50"><span class="placeholder-mark"><svg class="image-icon"><use href="#i-image"/></svg><span>Фото товара</span></span></a>
-    <button class="favorite icon-button" type="button" aria-label="В избранное: Солнцезащитный флюид SPF 50" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <article class="product" data-product-card data-id="spf" data-brand="cantabria" data-category="face" data-need="spf">
+  <div class="product-image placeholder">
+    <a class="product-photo-link" href="product.html?item=spf" aria-label="Открыть товар: HELIOCARE 360° Sensation SPF 50"><img class="product-photo" src="https://lecoleprof.by/wp-content/uploads/2025/10/ctyctqw-scaled-e1794478240117.png" alt="HELIOCARE 360° Sensation SPF 50, 50 мл" width="700" height="700" loading="lazy" decoding="async"></a>
+    <button class="favorite icon-button" type="button" aria-label="В избранное: HELIOCARE 360° Sensation SPF 50" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
   </div>
-  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=forme">FORME</a></p><h3><a href="product.html?item=spf">Солнцезащитный флюид SPF 50</a></h3><p class="product-description">Ежедневная защита · 50 мл</p><div class="product-buy"><p class="price">115,00 <span>BYN</span></p><button class="button add-to-cart" type="button">В корзину</button></div></div>
+  <div class="product-info"><p class="product-brand"><a class="brand-name-link" href="brand.html?brand=cantabria">Cantabria Labs</a></p><h3><a href="product.html?item=spf">HELIOCARE 360° Sensation SPF 50</a></h3><p class="product-description">Ультралёгкая солнцезащитная эмульсия · 50 мл</p><div class="product-buy"><p class="price price-pending">Цена уточняется</p><button class="button" type="button" data-add-id="spf">В корзину</button></div></div>
 </article>
       </div>
     </section>
 
-    <section class="container consultation-wrap" aria-labelledby="consultation-title"><div class="consultation"><div class="consultation-copy"><p class="eyebrow">Не нужно разбираться во всём</p><h2 id="consultation-title">Хороший уход начинается с вас.</h2><p>Расскажите, какой уход вы ищете. Поможем выбрать средства и собрать понятный ежедневный ритуал.</p><button class="button" type="button" data-demo="Консультация">Написать консультанту</button></div><div class="consultation-image placeholder" aria-hidden="true"><svg class="image-icon"><use href="#i-image"/></svg></div></div></section>
+    <section class="container consultation-wrap" aria-labelledby="consultation-title"><div class="consultation"><div class="consultation-copy"><p class="eyebrow">Не нужно разбираться во всём</p><h2 id="consultation-title">Хороший уход начинается с вас.</h2><p>Расскажите, какой уход вы ищете. Поможем выбрать средства и собрать понятный ежедневный ритуал.</p><a class="button" href="contacts.html#consultation" >Написать консультанту</a></div><div class="consultation-image"><img src="https://lecoleprof.by/wp-content/uploads/2026/07/4-700x875.png" alt="Увлажняющий уход ENDOCARE Age Barrier" width="700" height="875" loading="lazy" decoding="async"></div></div></section>
 
-    <section class="container brands" id="brands" aria-label="Бренды"><p>Марки, которые<br>хочется узнать ближе</p><div class="brand-list"><a class="brand-name-link" href="brand.html?brand=forme">FORME</a><a href="brand.html?brand=biretix">BIRETIX</a><a href="brand.html?brand=genosys">GENOSYS</a><a href="brand.html?brand=jw-pro">JW PRO</a><a href="brand.html?brand=cosmedix">COSMEDIX</a></div><a class="text-link" href="brands.html">Все бренды <span aria-hidden="true">→</span></a></section>
+    <section class="container brands" id="brands" aria-label="Бренды"><p>Марки, которые<br>хочется узнать ближе</p><div class="brand-list"><a href="brand.html?brand=cantabria">Cantabria Labs</a><a href="brand.html?brand=dermatime">Dermatime</a><a href="brand.html?brand=magiray">Magiray</a><a href="brand.html?brand=phyris">Phyris</a><a href="brand.html?brand=eldermafill">Eldermafill</a></div><a class="text-link" href="brands.html">Все бренды <span aria-hidden="true">→</span></a></section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="wordmark" href="index.html">merimarket</a><p>Косметика для личных ритуалов.<br>В вашем темпе.</p></div><details class="footer-group" open><summary>Выбрать уход</summary><div class="footer-links"><a href="catalog.html">Каталог</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a href="catalog.html?category=sets">Наборы</a></div></details><details class="footer-group" open><summary>Информация</summary><div class="footer-links"><button type="button" data-demo="О магазине">О магазине</button><button type="button" data-demo="Доставка и оплата">Доставка и оплата</button><button type="button" data-demo="Лояльность">Лояльность</button><button type="button" data-demo="Возврат и обмен">Возврат и обмен</button></div></details><details class="footer-group" open><summary>Мы рядом</summary><div class="footer-links"><button type="button" data-demo="Telegram">Написать в Telegram</button><button type="button" data-demo="Instagram">Instagram</button><button type="button" data-demo="Контакты">Контакты</button></div></details></div><div class="footer-bottom"><a href="sitemap.html">Карта сайта</a><span>© merimarket, 2026</span><button type="button" data-demo="Политика конфиденциальности">Политика конфиденциальности</button><button type="button" data-demo="Публичная оферта">Публичная оферта</button></div></div></footer>
-  <nav class="bottom-nav" aria-label="Мобильная навигация"><a class="is-active" href="index.html" aria-current="page"><svg class="icon"><use href="#i-home"/></svg><span>Главная</span></a><a href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg><span>Каталог</span></a><button type="button" data-demo="Избранное"><svg class="icon"><use href="#i-heart"/></svg><span>Избранное</span></button><button type="button" data-demo="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span>Корзина <span data-cart-count>0</span></span></button><button type="button" data-demo="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg><span>Профиль</span></button></nav>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="wordmark" href="index.html">merimarket</a><p>Косметика для личных ритуалов.<br>В вашем темпе.</p></div><details class="footer-group" open><summary>Выбрать уход</summary><div class="footer-links"><a href="catalog.html">Каталог</a><a href="brands.html">Бренды</a><a href="favorites.html">Избранное</a><a href="cart.html">Корзина</a></div></details><details class="footer-group" open><summary>Информация</summary><div class="footer-links"><a href="about.html">О магазине</a><a href="delivery.html">Доставка и получение</a><a href="returns.html">Возврат и обмен</a><a href="faq.html">Частые вопросы</a></div></details><details class="footer-group" open><summary>Мы рядом</summary><div class="footer-links"><a href="contacts.html">Контакты магазина</a><a href="contacts.html#consultation">Помощь с выбором</a><a href="contacts.html#telegram">Связь в Telegram</a></div></details></div><p class="footer-status">Контакты, реквизиты и условия получения будут добавлены после согласования с продавцом.</p><div class="footer-bottom"><a href="sitemap.html">Карта сайта</a><span>© merimarket, 2026</span><a href="privacy.html">Политика конфиденциальности</a><a href="offer.html">Публичная оферта</a></div></div></footer>
+  <nav class="bottom-nav" aria-label="Мобильная навигация"><a class="is-active" href="index.html" aria-current="page"><svg class="icon"><use href="#i-home"/></svg><span>Главная</span></a><a href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg><span>Каталог</span></a><a href="favorites.html"><svg class="icon"><use href="#i-heart"/></svg><span>Избранное</span></a><a href="cart.html"><svg class="icon"><use href="#i-bag"/></svg><span>Корзина <span data-cart-count>0</span></span></a><a href="contacts.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/></svg><span>Контакты</span></a></nav>
   <div class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>

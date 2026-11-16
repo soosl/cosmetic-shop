@@ -1,0 +1,12 @@
+/* Избранное: подборка и её пустое состояние. Общие элементы — в common.css. */
+.favorites-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-block: 32px 24px; font-size: 13px; color: var(--muted); }
+.favorites-grid { margin-bottom: 44px; }
+.favorites-note { padding: 28px 32px; background: var(--stone); border-radius: 5px; display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-top: 32px; }
+.favorites-note h2 { font-size: 30px; }
+.favorites-note p { margin-top: 8px; font-size: 13px; max-width: 550px; }
+@media(max-width:767px) {
+  .favorites-toolbar { margin-top: 24px; }
+  .favorites-note { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .favorites-note h2 { font-size: 27px; }
+  .favorites-note .button { width: 100%; }
+}

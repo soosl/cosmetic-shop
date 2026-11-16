@@ -1,0 +1,9 @@
+/* Возврат и вопросы о полученном заказе. */
+.returns-layout { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(250px,.6fr); gap: 50px; margin-top: 36px; }
+.returns-checklist { padding: 0; margin: 20px 0 0; list-style: none; counter-reset: return-step; }
+.returns-checklist li { counter-increment: return-step; display: flex; gap: 18px; padding-block: 22px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.returns-checklist li::before { content: '0' counter(return-step); color: var(--muted); font-size: 12px; padding-top: 2px; }
+.returns-help { background: var(--stone); padding: 30px; border-radius: 5px; align-self: start; }
+.returns-help h2 { font-size: 30px; margin-bottom: 18px; }
+.returns-help p { font-size: 14px; margin-bottom: 22px; }
+@media(max-width:767px) { .returns-layout { grid-template-columns: 1fr; gap: 28px; } }

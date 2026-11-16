@@ -1,0 +1,4 @@
+/* Политика: собственный файл страницы, типографика документа — общая. */
+.privacy-page .document-content section:last-child { border-bottom: 0; }
+.privacy-page .document-nav { border-left: 1px solid var(--line); padding-left: 18px; }
+@media(max-width:599px) { .privacy-page > h1 { font-size: 28px; } }

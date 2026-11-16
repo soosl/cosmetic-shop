@@ -1,0 +1,10 @@
+/* Вопросы о заказе без регистрации. */
+.faq-layout { display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 50px; margin-top: 36px; }
+.faq-nav { display: flex; flex-direction: column; gap: 16px; font-size: 13px; position: sticky; top: 24px; align-self: start; }
+.faq-group { margin-bottom: 38px; }
+.faq-group h2 { font-size: 32px; margin-bottom: 20px; }
+.faq-group details { border-top: 1px solid var(--line); padding-block: 18px; }
+.faq-group summary { cursor: pointer; font-size: 16px; padding-right: 12px; }
+.faq-group details p { font-size: 14px; line-height: 1.8; padding-top: 14px; max-width: 680px; }
+.faq-group details a { text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width:767px) { .faq-layout { grid-template-columns: 1fr; gap: 32px; } .faq-nav { position: static; flex-direction: row; flex-wrap: wrap; gap: 12px 22px; } }

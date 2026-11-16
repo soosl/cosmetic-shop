@@ -1,0 +1,38 @@
+/* Оформление: простая форма заявки, без отправки или оплаты. */
+.checkout-steps { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 24px 32px; font-size: 12px; color: var(--muted); }
+.checkout-steps [aria-current] { color: var(--accent); font-weight: bold; }
+.checkout-layout { display: grid; grid-template-columns: minmax(0,1fr) 350px; align-items: start; gap: 64px; margin-top: 32px; }
+.checkout-form { min-width: 0; }
+.checkout-block { border: 0; border-top: 1px solid var(--line); padding: 26px 0 32px; margin: 0; min-width: 0; }
+.checkout-block legend { float: left; width: 100%; padding: 0; font: 28px/1.2 var(--serif); margin-bottom: 24px; }
+.checkout-block legend + * { clear: both; }
+.form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 18px; }
+.form-field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+.form-field.full-field { grid-column: 1 / -1; }
+.form-field input, .form-field textarea { width: 100%; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 13px 14px; color: var(--ink); font: 14px/1.5 var(--sans); transition: border-color var(--motion-normal) var(--motion-ease); }
+.form-field input { min-height: 48px; }
+.form-field textarea { resize: vertical; min-height: 110px; }
+.form-field input:focus, .form-field textarea:focus { border-color: var(--accent); }
+.form-hint { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.delivery-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.delivery-choice { display: flex; align-items: start; gap: 10px; padding: 18px; border: 1px solid var(--line); border-radius: 5px; cursor: pointer; font-size: 13px; background: var(--card); }
+.delivery-choice:has(input:checked) { border-color: var(--accent); background: var(--stone); }
+.delivery-choice input { accent-color: var(--accent); margin: 3px 0 0; }
+.delivery-choice small { display: block; margin-top: 6px; font-size: 11px; color: var(--muted); }
+.pickup-note { padding: 20px; background: var(--stone); border-radius: 4px; font-size: 13px; }
+.checkout-submit { width: 100%; margin-top: 24px; }
+.checkout-submit + p { margin-top: 12px; }
+.order-items { list-style: none; padding: 0; margin: 24px 0; border-bottom: 1px solid var(--line); }
+.order-items li { display: flex; gap: 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--line); }
+.order-items img { flex: 0 0 56px; object-fit: contain; background: #fff; border-radius: 4px; }
+.order-items a { font-size: 12px; line-height: 1.5; display: block; overflow-wrap: anywhere; }
+.order-items span { display: block; font-size: 11px; color: var(--muted); margin-top: 6px; }
+@media(max-width:1100px) {
+  .checkout-layout { grid-template-columns: minmax(0,1fr) 290px; gap: 28px; }
+  .form-fields, .delivery-options { grid-template-columns: 1fr; }
+}
+@media(max-width:767px) {
+  .checkout-layout { grid-template-columns: 1fr; }
+  .checkout-block legend { font-size: 26px; }
+  .checkout-layout .order-summary { order: -1; position: static; }
+}

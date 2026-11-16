@@ -1,18 +1,23 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-palette="forest-peach">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F4F3EE">
+  <meta name="theme-color" content="#FFF7ED">
   <meta name="description" content="Карта сайта. Косметика и ритуалы merimarket.">
   <title>Карта сайта — merimarket</title>
-  <script src="palette.js"></script>
-  <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/sitemap.css">
-  <script src="demo-data.js" defer></script>
-  <script src="script.js" defer></script>
+  <!-- Переключатель палитр сохранён: раскомментировать для сравнения вариантов.
+  <script src="palette.js?v=20261116-v1"></script>
+  -->
+  <script src="page-loader.js?v=20261116-v1"></script>
+  <link rel="stylesheet" href="styles/common.css?v=20261116-v1">
+  <link rel="stylesheet" href="styles/sitemap.css?v=20261116-v1">
+  <script src="demo-data.js?v=20261116-v1" defer></script>
+  <script src="script.js?v=20261116-v1" defer></script>
+  <script src="commerce.js?v=20261116-v1" defer></script>
 </head>
 <body id="home">
+  <div class="page-loader" role="status" aria-label="Загрузка страницы"><span class="loader-orbit" aria-hidden="true"></span><span class="loader-wordmark" aria-hidden="true">merimarket</span><span class="visually-hidden">Загружаем ваш ритуал ухода</span></div>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
@@ -30,35 +35,46 @@
     <a class="brand" href="index.html" aria-label="merimarket — на главную"><span class="wordmark">merimarket</span><span class="brand-caption">КОСМЕТИКА И РИТУАЛЫ</span></a>
     <form class="search" role="search"><label class="visually-hidden" for="search">Поиск товаров</label><input id="search" name="q" type="search" placeholder="Найти средство, бренд или компонент"><button class="icon-button" type="submit" aria-label="Найти"><svg class="icon"><use href="#i-search"/></svg></button></form>
     <div class="header-actions">
-      <button class="icon-button desktop-action" type="button" data-demo="Избранное" aria-label="Избранное"><svg class="icon"><use href="#i-heart"/></svg></button>
-      <button class="icon-button desktop-action" type="button" data-demo="Личный кабинет" aria-label="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg></button>
-      <button class="cart-button" type="button" data-demo="Корзина" aria-label="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-label">Корзина · <span data-cart-count>0</span></span><span class="cart-badge" data-cart-count>0</span></button>
+      <a class="icon-button desktop-action" href="favorites.html" aria-label="Избранное"><svg class="icon"><use href="#i-heart"/></svg></a>
+
+      <a class="cart-button" href="cart.html" aria-label="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-label">Корзина · <span data-cart-count>0</span></span><span class="cart-badge" data-cart-count>0</span></a>
     </div>
   </header>
   <nav class="container main-nav" aria-label="Основная навигация">
-    <a class="catalog-link" href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg>Каталог</a><a class="wide-nav" href="catalog.html?category=face">Лицо</a><a class="wide-nav" href="catalog.html?category=body">Тело</a><a class="wide-nav" href="catalog.html?category=hair">Волосы</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a class="wide-nav" href="catalog.html?category=sets">Наборы</a><a class="offers-link" href="catalog.html"><span class="desktop-offers">Специальные предложения</span><span class="mobile-offers">Акции</span></a>
+    <a class="catalog-link" href="catalog.html">Каталог</a><a class="wide-nav" href="catalog.html?category=face">Лицо</a><a class="wide-nav" href="catalog.html?category=body">Тело</a><a class="wide-nav" href="catalog.html?category=hair">Волосы</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a class="wide-nav" href="catalog.html?category=sets">Наборы</a><a class="offers-link" href="faq.html">Помощь</a>
   </nav>
 
   <main>
 <div class="container sitemap-page">
   <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Карта сайта</span></nav>
   <p class="eyebrow">Все страницы в одном месте</p><h1>Карта сайта</h1><p class="page-lead">Выберите страницу, чтобы посмотреть вёрстку. Все готовые страницы адаптированы для компьютера, планшета и телефона.</p>
-  <section aria-labelledby="ready-title"><div class="section-heading"><h2 id="ready-title">Уже можно посмотреть</h2><span class="map-status">7 страниц</span></div><div class="sitemap-grid">
+  <section aria-labelledby="ready-title"><div class="section-heading"><h2 id="ready-title">Уже можно посмотреть</h2><span class="map-status">18 страниц</span></div><div class="sitemap-grid">
     <a class="sitemap-card" href="index.html"><span class="eyebrow">01 · Знакомство</span><h3>Главная</h3><p>Настроение магазина, категории и подборка средств.</p><span class="text-link">Открыть страницу →</span></a>
     <a class="sitemap-card" href="catalog.html"><span class="eyebrow">02 · Подбор ухода</span><h3>Каталог</h3><p>Средства, фильтры по потребностям и сортировка.</p><span class="text-link">Открыть страницу →</span></a>
     <a class="sitemap-card" href="product.html?item=gel"><span class="eyebrow">03 · Знакомство со средством</span><h3>Карточка товара</h3><p>Цена, объём, описание и применение.</p><span class="text-link">Открыть страницу →</span></a>
-    <a class="sitemap-card current-map" href="sitemap.html" aria-current="page"><span class="eyebrow">04 · Навигация</span><h3>Карта сайта</h3><p>Все готовые страницы и план следующих экранов.</p><span class="text-link">Вы здесь</span></a>
+    <a class="sitemap-card current-map" href="sitemap.html" aria-current="page"><span class="eyebrow">04 · Навигация</span><h3>Карта сайта</h3><p>Все страницы первой версии в одном месте.</p><span class="text-link">Вы здесь</span></a>
     <a class="sitemap-card" href="404.html"><span class="eyebrow">05 · Если ссылка потерялась</span><h3>Страница 404</h3><p>Понятный путь обратно на главную или в каталог.</p><span class="text-link">Открыть страницу →</span></a>
-    <a class="sitemap-card" href="brands.html"><span class="eyebrow">06 · Знакомство с брендами</span><h3>Все бренды</h3><p>Список, поиск по названию и фильтр по первой букве.</p><span class="text-link">Открыть страницу →</span></a>
-    <a class="sitemap-card" href="brand.html?brand=forme"><span class="eyebrow">07 · Коллекция бренда</span><h3>Страница бренда</h3><p>Знакомство с брендом и подборка его средств.</p><span class="text-link">Открыть страницу →</span></a>
+    <a class="sitemap-card" href="brands.html"><span class="eyebrow">06 · Знакомство с брендами</span><h3>Все бренды</h3><p>Знакомство с брендами и переход к коллекции.</p><span class="text-link">Открыть страницу →</span></a>
+    <a class="sitemap-card" href="brand.html?brand=cantabria"><span class="eyebrow">07 · Коллекция бренда</span><h3>Страница бренда</h3><p>Знакомство с брендом и подборка его средств.</p><span class="text-link">Открыть страницу →</span></a>
+    <a class="sitemap-card" href="favorites.html"><span class="eyebrow">08 · Сохранённые средства</span><h3>Избранное</h3><p>Подборка любимых средств, удаление и переход в корзину.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="cart.html"><span class="eyebrow">09 · Ваша подборка</span><h3>Корзина</h3><p>Товары, количество и переход к оформлению.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="checkout.html"><span class="eyebrow">10 · Последний шаг</span><h3>Оформление заказа</h3><p>Контакты, получение и демонстрация подтверждения заявки.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="about.html"><span class="eyebrow">11 · Информация и сервис</span><h3>О магазине</h3><p>Знакомство с подходом и подборкой ухода.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="contacts.html"><span class="eyebrow">12 · Информация и сервис</span><h3>Контакты</h3><p>Места для контактов, графика и реквизитов продавца.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="delivery.html"><span class="eyebrow">13 · Информация и сервис</span><h3>Доставка и получение</h3><p>Шаги оформления и способы получения.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="returns.html"><span class="eyebrow">14 · Информация и сервис</span><h3>Возврат и обмен</h3><p>Порядок обращения и место для согласованных условий.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="faq.html"><span class="eyebrow">15 · Информация и сервис</span><h3>Частые вопросы</h3><p>Выбор средств, оформление без регистрации и получение.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="privacy.html"><span class="eyebrow">16 · Информация и сервис</span><h3>Политика конфиденциальности</h3><p>Шаблон документа для согласованного текста.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="offer.html"><span class="eyebrow">17 · Информация и сервис</span><h3>Публичная оферта</h3><p>Шаблон условий покупки и сведений о продавце.</p><span class="text-link">Открыть страницу →</span></a>
+<a class="sitemap-card" href="order-result.html"><span class="eyebrow">18 · Информация и сервис</span><h3>Результат оформления</h3><p>Пример подтверждения заявки и ошибки передачи.</p><span class="text-link">Открыть страницу →</span></a>
   </div></section>
   <section class="map-categories" aria-labelledby="map-categories-title"><h2 id="map-categories-title">Разделы каталога</h2><div class="category-shortcuts"><a href="catalog.html?category=face">Для лица →</a><a href="catalog.html?category=body">Для тела →</a><a href="catalog.html?category=hair">Для волос →</a><a href="catalog.html?category=sets">Наборы →</a></div></section>
-  <section class="map-planned" aria-labelledby="planned-title"><p class="eyebrow">Следующие этапы</p><h2 id="planned-title">Ещё предстоит подготовить</h2><p>Эти страницы пока не свёрстаны.</p><ul><li>Избранное</li><li>Корзина и оформление</li><li>Результат заказа и оплаты</li><li>Вход, регистрация и восстановление пароля</li><li>Кабинет покупателя</li><li>О магазине и контакты</li><li>Доставка, оплата, возвраты и лояльность</li><li>Документы и служебные состояния</li></ul><p class="map-note">Поиск пока использует подборку демонстрационных товаров на странице каталога.</p></section>
+  <section class="map-planned"><p class="eyebrow">Готовим к интеграции</p><h2>Первая версия</h2><p>Страницы свёрстаны. Далее — отдельная интеграция с WordPress и передача заявок менеджеру в Telegram. Личного кабинета и онлайн-оплаты в этой версии нет.</p><ul><li>Добавить реальные цены, наличие и ассортимент.</li><li>Заполнить контакты, реквизиты и согласованные условия.</li><li>Подключить обработку заявки и проверить успешную отправку и ошибку.</li></ul><p class="map-note"><a href="order-result.html?status=error">Посмотреть состояние ошибки отправки →</a></p></section>
 </div>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="wordmark" href="index.html">merimarket</a><p>Косметика для личных ритуалов.<br>В вашем темпе.</p></div><details class="footer-group" open><summary>Выбрать уход</summary><div class="footer-links"><a href="catalog.html">Каталог</a><a href="brands.html">Бренды</a><a href="catalog.html">Новинки</a><a href="catalog.html?category=sets">Наборы</a></div></details><details class="footer-group" open><summary>Информация</summary><div class="footer-links"><button type="button" data-demo="О магазине">О магазине</button><button type="button" data-demo="Доставка и оплата">Доставка и оплата</button><button type="button" data-demo="Лояльность">Лояльность</button><button type="button" data-demo="Возврат и обмен">Возврат и обмен</button></div></details><details class="footer-group" open><summary>Мы рядом</summary><div class="footer-links"><button type="button" data-demo="Telegram">Написать в Telegram</button><button type="button" data-demo="Instagram">Instagram</button><button type="button" data-demo="Контакты">Контакты</button></div></details></div><div class="footer-bottom"><a href="sitemap.html">Карта сайта</a><span>© merimarket, 2026</span><button type="button" data-demo="Политика конфиденциальности">Политика конфиденциальности</button><button type="button" data-demo="Публичная оферта">Публичная оферта</button></div></div></footer>
-  <nav class="bottom-nav" aria-label="Мобильная навигация"><a href="index.html"><svg class="icon"><use href="#i-home"/></svg><span>Главная</span></a><a href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg><span>Каталог</span></a><button type="button" data-demo="Избранное"><svg class="icon"><use href="#i-heart"/></svg><span>Избранное</span></button><button type="button" data-demo="Корзина"><svg class="icon"><use href="#i-bag"/></svg><span>Корзина <span data-cart-count>0</span></span></button><button type="button" data-demo="Личный кабинет"><svg class="icon"><use href="#i-user"/></svg><span>Профиль</span></button></nav>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="wordmark" href="index.html">merimarket</a><p>Косметика для личных ритуалов.<br>В вашем темпе.</p></div><details class="footer-group" open><summary>Выбрать уход</summary><div class="footer-links"><a href="catalog.html">Каталог</a><a href="brands.html">Бренды</a><a href="favorites.html">Избранное</a><a href="cart.html">Корзина</a></div></details><details class="footer-group" open><summary>Информация</summary><div class="footer-links"><a href="about.html">О магазине</a><a href="delivery.html">Доставка и получение</a><a href="returns.html">Возврат и обмен</a><a href="faq.html">Частые вопросы</a></div></details><details class="footer-group" open><summary>Мы рядом</summary><div class="footer-links"><a href="contacts.html">Контакты магазина</a><a href="contacts.html#consultation">Помощь с выбором</a><a href="contacts.html#telegram">Связь в Telegram</a></div></details></div><p class="footer-status">Контакты, реквизиты и условия получения будут добавлены после согласования с продавцом.</p><div class="footer-bottom"><a href="sitemap.html">Карта сайта</a><span>© merimarket, 2026</span><a href="privacy.html">Политика конфиденциальности</a><a href="offer.html">Публичная оферта</a></div></div></footer>
+  <nav class="bottom-nav" aria-label="Мобильная навигация"><a href="index.html"><svg class="icon"><use href="#i-home"/></svg><span>Главная</span></a><a href="catalog.html"><svg class="icon"><use href="#i-menu"/></svg><span>Каталог</span></a><a href="favorites.html"><svg class="icon"><use href="#i-heart"/></svg><span>Избранное</span></a><a href="cart.html"><svg class="icon"><use href="#i-bag"/></svg><span>Корзина <span data-cart-count>0</span></span></a><a href="contacts.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/></svg><span>Контакты</span></a></nav>
   <div class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
